@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f03ab5ef664a5e743854d77960a4df17
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - groundTilemap: {instanceID: 0}
+  - obstacleTilemap: {instanceID: 0}
+  - snowTile: {instanceID: 0}
+  - treeTile: {fileID: 11400000, guid: 1569f1ef108547a4f8988d7ed991bcc8, type: 2}
+  - player: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
