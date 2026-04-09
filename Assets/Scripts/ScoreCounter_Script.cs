@@ -65,6 +65,7 @@ public class ScoreCounter : MonoBehaviour
             }
         }
 
+        // If round is over and no more enemies -> victory sound! and go to next scene
         if (!roundOver && 
             GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
@@ -83,6 +84,7 @@ public class ScoreCounter : MonoBehaviour
 
         string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
 
+        // Traversing scenes based on current map
         if (currentScene == "Map1") {
             TotalScore.AddToTotal(score);
             UnityEngine.SceneManagement.SceneManager.LoadScene("Map2");
@@ -100,6 +102,7 @@ public class ScoreCounter : MonoBehaviour
         }
     }
 
+    // Adds to score, and added the siphon feature for multiple of 40
     public void AddScore(int amount)
     {
         score += amount;
@@ -121,6 +124,7 @@ public class ScoreCounter : MonoBehaviour
         }
     }
 
+    // Reset scores, and other flags
     public void ResetGame()
     {
         score = 0;

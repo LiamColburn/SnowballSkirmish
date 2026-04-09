@@ -24,7 +24,7 @@ public class Snowman_Script : Character_Script
     {
         base.Update();
 
-        // Movement — new Input System
+        // Movement
         var keyboard = Keyboard.current;
         if (keyboard != null)
         {
@@ -33,7 +33,7 @@ public class Snowman_Script : Character_Script
             moveInput = moveInput.normalized;
         }
 
-        // Shoot on click — new Input System
+        // Shoot on click
         var mouse = Mouse.current;
         if (mouse != null && mouse.leftButton.wasPressedThisFrame && timer <= 0f)
         {
@@ -45,11 +45,13 @@ public class Snowman_Script : Character_Script
         }
     }
 
+    // Moved based on input, speed, and time
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveInput * speed * Time.fixedDeltaTime);
     }
 
+    // Plays the death audio
     protected override void Die()
     {
         AudioSource.PlayClipAtPoint(deathSound, transform.position);
@@ -58,14 +60,13 @@ public class Snowman_Script : Character_Script
         StartCoroutine(DeathSequence());
     }
 
+    // Loads up the credit scene and waits for loss audio to play
     System.Collections.IEnumerator DeathSequence()
     {
-        if (deathSound != null)
-            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+        
 
-        // Wait for sound to finish before loading
-        float waitTime = deathSound != null ? deathSound.length : 1f;
-        yield return new WaitForSeconds(waitTime);
+        
+        yield return new WaitForSeconds(1);
 
         SceneManager.LoadScene("Credits");
     }

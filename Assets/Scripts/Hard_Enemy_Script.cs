@@ -18,6 +18,7 @@ public class Hard_Enemy_Script : Enemy_Script
         fireRate /= 1.5f;
     }
 
+    // Every frame check for the player, and move towards them
     protected override void Update()
     {
         base.Update();
@@ -34,6 +35,7 @@ public class Hard_Enemy_Script : Enemy_Script
         }
     }
 
+    // Find best direction using the player and enemies positions, finding the directional vector
     Vector2 GetBestDirection()
     {
         Vector2 toPlayer = (player.position - transform.position).normalized;

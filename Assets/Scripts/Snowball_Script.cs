@@ -16,6 +16,7 @@ public class Snowball_Script : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    // Move while no collision
     void Update()
     {
         if (!hasHit)
@@ -33,6 +34,7 @@ public class Snowball_Script : MonoBehaviour
         direction = throwDirection.normalized;
     }
 
+    // Determines what object was in the collision, only take damage if an enemy or player. Always break
     void OnCollisionEnter2D(Collision2D coll)
     {
 
@@ -55,6 +57,7 @@ public class Snowball_Script : MonoBehaviour
         }
     }
 
+    // Destroy snowball when it hits
     void HitSomething()
     {
         hasHit = true;

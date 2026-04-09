@@ -7,6 +7,7 @@ public class Credits_Script : MonoBehaviour
     private float timer = 0f;
     public float displayTime = 5f;
 
+    // Automaticall loads the intro scene once the end credit scene is opened
     void Update()
     {
         timer += Time.deltaTime;
@@ -14,6 +15,7 @@ public class Credits_Script : MonoBehaviour
             ReturnIntro();
     }
 
+    // Loads the intro scene
     public void ReturnIntro()
     {
         if (ScoreCounter.instance != null)

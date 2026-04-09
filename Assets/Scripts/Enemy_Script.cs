@@ -7,7 +7,7 @@ public class Enemy_Script : Character_Script
     [Header("Shooting")]
     public float shootRange = 6f;
 
-
+    // Gives calls parent start function, gives health, and finds player characters
     protected override void Start()
     {
         base.Start();
@@ -16,11 +16,12 @@ public class Enemy_Script : Character_Script
         player = GameObject.FindWithTag("Player").transform;
     }
 
+    // Every frame shoot in the direction of the player, if the distance is within the set range
     protected override void Update()
     {
         base.Update();
 
-        // If within range
+        // If within range shoot
         float distance = Vector2.Distance(transform.position, player.position);
         
         if (timer <= 0f && distance < shootRange)

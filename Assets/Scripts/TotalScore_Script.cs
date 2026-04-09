@@ -19,6 +19,7 @@ public class TotalScore : MonoBehaviour
         totalScore = PlayerPrefs.GetInt("TotalScore", 0);
     }
 
+    // Adds score to total
     public static void AddToTotal(int amount)
     {
         totalScore += amount;
@@ -26,6 +27,7 @@ public class TotalScore : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    // Resets the score every game
     public static void ResetTotal()
     {
         totalScore = 0;
